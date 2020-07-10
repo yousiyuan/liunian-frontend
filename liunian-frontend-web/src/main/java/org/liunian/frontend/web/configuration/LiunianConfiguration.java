@@ -12,7 +12,9 @@ import org.springframework.context.annotation.Import;
         WebServerListener.class,
         ApplicationEventAdvice.class,
         JacksonConfig.class,
-        SpringContextUtils.class})
+        SpringContextUtils.class,
+        BalanceConfig.class,
+        RedisConfig.class})
 @ComponentScan(basePackages = {"org.liunian.frontend.client.fallbackfactory"})
 public class LiunianConfiguration {
 }

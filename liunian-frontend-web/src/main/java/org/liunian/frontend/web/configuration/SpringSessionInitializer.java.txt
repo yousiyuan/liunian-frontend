@@ -1,0 +1,12 @@
+package org.liunian.frontend.web.configuration;
+
+import org.springframework.session.web.context.AbstractHttpSessionApplicationInitializer;
+
+// 初始化Session配置
+public class SpringSessionInitializer extends AbstractHttpSessionApplicationInitializer {
+
+    public SpringSessionInitializer() {
+        super(SpringSessionConfig.class);
+    }
+
+}

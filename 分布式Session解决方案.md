@@ -49,3 +49,9 @@ ELK、大型的电商互联网内部分布式日志搜集
 
 答：使用缓存框架，缓存Session数据。(一级缓存Ehcache和二级缓存Redis)
 
+二、Spring-Session框架的配置问题
+
+1、引入Spring-Session相关的依赖之后，可以通过配置文件的形式直接配置使用
+
+2、引入Spring-Session相关的依赖之后，如果不使用配置文件，也可以通过注解的形式进行Session相关的Redis存储配置
+

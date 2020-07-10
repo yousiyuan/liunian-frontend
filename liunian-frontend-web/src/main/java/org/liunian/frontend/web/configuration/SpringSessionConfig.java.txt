@@ -1,0 +1,11 @@
+package org.liunian.frontend.web.configuration;
+
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+
+/**
+ * 注解@EnableRedisHttpSession的参数maxInactiveIntervalInSeconds作用：
+ * 用于设置SpringSession的过期时间(单位：秒)
+ */
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 1800, redisNamespace = "${spring.session.redis.namespace}")
+public class SpringSessionConfig {
+}
