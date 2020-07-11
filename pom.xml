@@ -116,6 +116,11 @@
                 <artifactId>ehcache</artifactId>
                 <version>2.9.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>2.0</version>
+            </dependency>
             <!--分布式协调工具 zookeeper-->
             <dependency>
                 <groupId>com.101tec</groupId>
@@ -139,11 +144,16 @@
                 <artifactId>gentyref</artifactId>
                 <version>1.2.0</version>
             </dependency>
-            <!--其它依赖项-->
+            <!--SpringBoot 集成 JWT-->
             <dependency>
-                <groupId>org.apache.commons</groupId>
-                <artifactId>commons-pool2</artifactId>
-                <version>2.0</version>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>3.10.3</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -58,5 +58,14 @@
             <groupId>com.googlecode.gentyref</groupId>
             <artifactId>gentyref</artifactId>
         </dependency>
+        <!--SpringBoot 集成 JWT-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+        </dependency>
     </dependencies>
 </project>

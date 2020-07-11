@@ -2,6 +2,7 @@ package org.liunian.common;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,4 +49,10 @@ public class DateUtils {
         return getSimpleDateFormat(pattern).parse(dateStr);
     }
 
+    public static Date offset(Date date, int expire, int field) {
+        Calendar instance = Calendar.getInstance();
+        instance.setTime(date);
+        instance.add(field, expire);
+        return instance.getTime();
+    }
 }
