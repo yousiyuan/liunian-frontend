@@ -58,6 +58,15 @@
             <groupId>com.googlecode.gentyref</groupId>
             <artifactId>gentyref</artifactId>
         </dependency>
+        <!--引入redis依赖-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
         <!--SpringBoot 集成 JWT-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

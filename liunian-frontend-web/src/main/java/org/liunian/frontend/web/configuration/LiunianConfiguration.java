@@ -1,5 +1,6 @@
 package org.liunian.frontend.web.configuration;
 
+import org.liunian.common.TokenSessionUtils;
 import org.liunian.common.SpringContextUtils;
 import org.liunian.frontend.web.component.CharacterEncodingFilter;
 import org.liunian.frontend.web.component.AuthInterceptor;
@@ -23,6 +24,7 @@ import java.util.HashMap;
         ApplicationEventAdvice.class,
         JacksonConfig.class,
         SpringContextUtils.class,
+        TokenSessionUtils.class,
         BalanceConfig.class,
         RedisConfig.class})
 @ComponentScan(basePackages = {"org.liunian.frontend.client.fallbackfactory"})
@@ -49,7 +51,7 @@ public class LiunianConfiguration implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new AuthInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/", "/**/login")
+                .excludePathPatterns("/", "/**/login", "/**/login/submit")
                 .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg", "/**/*.gif", "/**/fonts/*", "/**/*.svg");
     }
 

@@ -38,8 +38,18 @@ public class JwtUtils {
         }
     }
 
+    /*获取签发的token，返回给前端*/
+    public static String createToken() {
+        try {
+            Algorithm algorithm = Algorithm.RSA256(secretKeyCreator.getPublicKey(), secretKeyCreator.getPrivateKey());
+            return createToken(algorithm);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
     /*签发token*/
-    private static String createToken(Algorithm algorithm, Object data) throws Exception {
+    private static String createToken(Algorithm algorithm, Object data) {
         String[] audience = {"app", "web"};
         return JWT.create()
                 .withIssuer(ISSUER)        //发布者
@@ -47,6 +57,19 @@ public class JwtUtils {
                 .withIssuedAt(new Date())   // 生成签名的时间
                 .withExpiresAt(DateUtils.offset(new Date(), 30, Calendar.MINUTE))    // 生成签名的有效期
                 .withClaim("data", ComUtils.str(data)) //存数据
+                .withNotBefore(new Date())  //生效时间
+                .withJWTId(UUID.randomUUID().toString())    //编号
+                .sign(algorithm);                            //签入
+    }
+
+    /*签发token*/
+    private static String createToken(Algorithm algorithm) {
+        String[] audience = {"app", "web"};
+        return JWT.create()
+                .withIssuer(ISSUER)        //发布者
+                .withAudience(audience)     //观众，相当于接受者
+                .withIssuedAt(new Date())   // 生成签名的时间
+                .withExpiresAt(DateUtils.offset(new Date(), 30, Calendar.MINUTE))    // 生成签名的有效期
                 .withNotBefore(new Date())  //生效时间
                 .withJWTId(UUID.randomUUID().toString())    //编号
                 .sign(algorithm);                            //签入
