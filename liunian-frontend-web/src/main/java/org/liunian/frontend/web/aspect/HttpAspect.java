@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class HttpAspect {
 
-    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.PostMapping)")
     public void log() {
     }
 

@@ -127,6 +127,22 @@ public class ComUtils {
     }
 
     /**
+     * 字符串source是否以prefix开头
+     */
+    public static boolean startWith(String source, String prefix) {
+        Pattern compile = Pattern.compile("^" + prefix, Pattern.CASE_INSENSITIVE);
+        return compile.matcher(source).find();
+    }
+
+    /**
+     * 字符串source是否以prefix开头
+     */
+    public static boolean endWith(String source, String suffix) {
+        Pattern compile = Pattern.compile(suffix + "$", Pattern.CASE_INSENSITIVE);
+        return compile.matcher(source).find();
+    }
+
+    /**
      * Jackson解析Object对象，获取字段值
      */
     public static String readObject(Object object, String fieldName) {

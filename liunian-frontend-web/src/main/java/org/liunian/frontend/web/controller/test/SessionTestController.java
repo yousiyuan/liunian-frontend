@@ -1,4 +1,4 @@
-package org.liunian.frontend.web.controller;
+package org.liunian.frontend.web.controller.test;
 
 import org.liunian.common.JsonUtils;
 import org.liunian.frontend.web.controller.base.BaseController;

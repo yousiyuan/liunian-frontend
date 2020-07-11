@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 
 public abstract class BaseController {
 
+    protected static final String APP_KEY = "3BFBZ-ZKD3X-LW54A-ZT76D-E7AHO-4RBD5";
+
     @Autowired
     private HttpServletRequest request;
 

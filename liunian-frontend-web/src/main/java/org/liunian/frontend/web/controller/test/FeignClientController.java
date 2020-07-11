@@ -1,4 +1,4 @@
-package org.liunian.frontend.web.controller;
+package org.liunian.frontend.web.controller.test;
 
 import org.liunian.common.JsonUtils;
 import org.liunian.frontend.web.controller.base.BaseController;
@@ -17,7 +17,7 @@ public class FeignClientController extends BaseController {
     @GetMapping("/ip")
     @ResponseBody
     public String getHostAddress() {
-        return thirdPartyApiClient.queryIpAddressInfo("3BFBZ-ZKD3X-LW54A-ZT76D-E7AHO-4RBD5");
+        return thirdPartyApiClient.queryIpAddressInfo(APP_KEY);
     }
 
     @GetMapping("/data")

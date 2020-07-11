@@ -1,4 +1,4 @@
-package org.liunian.frontend.web.listener;
+package org.liunian.frontend.web.component;
 
 import lombok.extern.slf4j.Slf4j;
 import org.liunian.common.ComUtils;
